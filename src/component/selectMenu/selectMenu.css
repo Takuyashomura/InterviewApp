@@ -1,0 +1,19 @@
+.menu{
+    text-align: center;
+}
+
+.select_number > p{
+    margin-bottom: 5px;
+}
+
+select{
+    border: solid 1px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align-last: center;
+}
+
+.number_box{
+    height: 50px;
+    width: 50px;
+}

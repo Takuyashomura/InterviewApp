@@ -1,10 +1,11 @@
 import React from 'react';
+import './Button.css';
 
 const Button = ( props ) => {
     const { onClickHandler } = props;
 
     return (
-        <div onClick={ onClickHandler }>{ props.children }</div>
+        <div className="menuButton" onClick={ onClickHandler }><p>{ props.children }</p></div>
     )
 }
 
