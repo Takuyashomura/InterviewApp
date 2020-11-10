@@ -1,0 +1,14 @@
+.menuButton{
+    border: 1px solid;
+    border-radius: 20px;
+    width: 50%;
+    margin: 50px auto;
+    padding: 30px;
+    cursor: pointer;
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 30px;
+}
