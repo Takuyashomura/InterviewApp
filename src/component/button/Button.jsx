@@ -5,7 +5,7 @@ const Button = ( props ) => {
     const { onClickHandler } = props;
 
     return (
-        <div className="menuButton" onClick={ onClickHandler }><p>{ props.children }</p></div>
+        <div className="menuButton" onClick={ onClickHandler }><p className="button" >{ props.children }</p></div>
     )
 }
 

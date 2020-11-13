@@ -1,10 +1,10 @@
-import SelectMenu from './SelectMenu';
+import MainView from './mainView';
 import { connect } from 'react-redux';
 
-const mapStateToProps = state => ({ SelectType: state.SelectType });
+const mapStateToProps = state => ({ });
 
 const mapDispatchToProps = dispatch => ({
-    
+
 });
 
 const mergeProps = ( stateProps, dispatchProps ) => ({
@@ -12,8 +12,8 @@ const mergeProps = ( stateProps, dispatchProps ) => ({
     ...dispatchProps
 });
 
-export default connect( 
-    mapStateToProps, 
+export default connect(
+    mapStateToProps,
     mapDispatchToProps,
     mergeProps
-    )(SelectMenu);
+)(MainView);
