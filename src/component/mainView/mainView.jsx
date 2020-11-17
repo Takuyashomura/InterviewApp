@@ -1,5 +1,6 @@
 import React from 'react';
 import './mainView.css';
+import { Link } from 'react-router-dom';
 import interviewer from '../../image/interviewer.jpg';
 
 const MainView = () => {
@@ -27,6 +28,7 @@ const MainView = () => {
                         <div className="evaluationButton"><p>Bad</p></div>
                         <div className="evaluationButton"><p>Good</p></div>
                     </div>
+                    <Link to="/">トップへ戻る</Link>
                 </section>
             </div>
         </div>
