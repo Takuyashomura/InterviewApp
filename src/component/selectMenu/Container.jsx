@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({ SelectType: state.SelectType });
 
-const mapDispatchToProps = dispatch => ({
-    
+const mapDispatchToProps = (dispatch, { router }) => ({
 });
 
 const mergeProps = ( stateProps, dispatchProps ) => ({
