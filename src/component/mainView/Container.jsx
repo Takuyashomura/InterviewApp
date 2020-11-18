@@ -1,5 +1,6 @@
 import MainView from './mainView';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => ({ });
 
@@ -12,8 +13,8 @@ const mergeProps = ( stateProps, dispatchProps ) => ({
     ...dispatchProps
 });
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps,
     mergeProps
-)(MainView);
+)(MainView));
