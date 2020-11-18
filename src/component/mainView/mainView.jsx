@@ -1,9 +1,20 @@
 import React from 'react';
 import './mainView.css';
+import { shuffleArray } from '../../service/question';
+import { normalQuestion } from '../../Array/questionArray';
 import { Link } from 'react-router-dom';
 import interviewer from '../../image/interviewer.jpg';
 
-const MainView = () => {
+
+
+const MainView = ({ addQuestion }) => {
+    const array = shuffleArray( normalQuestion );
+
+    for(let i = 0; i < 5; i ++){
+
+        const question = array[i];
+        console.log( question )
+    }
     return (
         <div className="mainView">
             <div className="container">

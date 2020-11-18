@@ -1,10 +1,10 @@
 import SelectMenu from './SelectMenu';
+import { currentQuestion } from '../../redux/currentQuestion/currentQuestion_action';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => ({ SelectType: state.SelectType });
 
-const mapDispatchToProps = (dispatch, { router }) => ({
+const mapDispatchToProps = (dispatch) => ({
 });
 
 const mergeProps = ( stateProps, dispatchProps ) => ({
@@ -12,8 +12,8 @@ const mergeProps = ( stateProps, dispatchProps ) => ({
     ...dispatchProps
 });
 
-export default withRouter(connect( 
+export default connect( 
     mapStateToProps, 
     mapDispatchToProps,
     mergeProps
-    )(SelectMenu));
+    )(SelectMenu);

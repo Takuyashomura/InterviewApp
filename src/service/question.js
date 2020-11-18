@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 //配列の中からランダムに返す
-export const fetchQuestionData = ( array ) => {
-    let questionData = _.sample( array )
+export const shuffleArray = ( array ) => {
+    let questionData = _.shuffle( array )
     return questionData;
 };
