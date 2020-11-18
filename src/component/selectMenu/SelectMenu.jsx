@@ -1,14 +1,26 @@
 import React from 'react';
 import Button from '../button/Button';
-import { normalQuestion } from '../../Array/questionArray';
+<<<<<<< HEAD
+import { withRouter } from 'react-router-dom';
 import './selectMenu.css';
 
-const SelectMenu = ({history}) => {
-    console.log(normalQuestion)
+const SelectMenu = ({ history }) => {
+
     return (
         <div class="menu">
             <h1 className="menu_title">面接対策アプリ</h1>
-            <Button onClickHandler={ () => { history.push('Main/') } }>ノーマル面接</Button>
+            <Button onClickHandler={ () => { history.push('main/') } }>ノーマル面接</Button>
+=======
+import { withRouter } from 'react-router-dom';
+import './selectMenu.css';
+
+const SelectMenu = ({ history }) => {
+
+    return (
+        <div class="menu">
+            <h1 className="menu_title">面接対策アプリ</h1>
+            <Button onClickHandler={ () => { history.push('main/')} }>ノーマル面接</Button>
+>>>>>>> issue/#6
             <Button>圧迫面接</Button>
             <div className="select_number">
             <p>質問の数</p>
@@ -25,4 +37,4 @@ const SelectMenu = ({history}) => {
     );
 }
 
-export default SelectMenu;
+export default withRouter(SelectMenu);

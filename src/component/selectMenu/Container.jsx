@@ -4,8 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => ({ SelectType: state.SelectType });
 
-const mapDispatchToProps = dispatch => ({
-    
+const mapDispatchToProps = (dispatch, { router }) => ({
 });
 
 const mergeProps = ( stateProps, dispatchProps ) => ({
