@@ -1,14 +1,14 @@
 import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route} from 'react-router-dom';
 import SelectMenu from './component/selectMenu/Container';
 import MainView from './component/mainView/Container';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Router>
-        <Route path="/" exact component={SelectMenu}/>
-        <Route path="/main" exact component={MainView}/>
+          <Route exact path="/" component={SelectMenu}/>
+          <Route exact path="/Main" component={MainView}/>
       </Router>
     </div>
   );

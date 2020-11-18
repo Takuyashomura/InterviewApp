@@ -8,7 +8,7 @@ const SelectMenu = ({ history }) => {
     return (
         <div class="menu">
             <h1 className="menu_title">面接対策アプリ</h1>
-            <Button onClickHandler={ () => { history.push('/main')} }>ノーマル面接</Button>
+            <Button onClickHandler={ () => { history.push('main/') } }>ノーマル面接</Button>
             <Button>圧迫面接</Button>
             <div className="select_number">
             <p>質問の数</p>
@@ -22,7 +22,7 @@ const SelectMenu = ({ history }) => {
             </select>
             </div>
         </div>
-    )
+    );
 }
 
 export default withRouter(SelectMenu);
