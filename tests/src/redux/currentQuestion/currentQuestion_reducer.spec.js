@@ -1,9 +1,9 @@
 import currentQuestionReducer from '../../../../src/redux/currentQuestion/currentQuestion_reducer';
-import { FETCH_QUESTION_DATA, CURRENT_QUESTION, QUESTION_NUMBER, QUESTION_NUMBER_DECREMENT } from '../../../../src/redux/currentQuestion/currentQuestion_action';
+import { FETCH_QUESTION_DATA, CURRENT_QUESTION, QUESTION_NUMBER, QUESTION_NUMBER_DECREMENT, RESET_QUESTION } from '../../../../src/redux/currentQuestion/currentQuestion_action';
 
 describe('currentQuestionReducerのテスト', () => {
     it('action.type === FETCH_QUESTION_DATA', () => {
-        const dummyData = ["a","b","c"];
+        const dummyData = "a";
 
         const action = {
             type: FETCH_QUESTION_DATA,
@@ -11,7 +11,7 @@ describe('currentQuestionReducerのテスト', () => {
         };
 
         const currentState = {
-            questionData: [],
+            questions: [],
             currentQuestion: "",
             questionNumber: 0
         };
@@ -19,7 +19,7 @@ describe('currentQuestionReducerのテスト', () => {
         const newState = currentQuestionReducer( currentState, action );
 
         expect( newState ).toStrictEqual({
-            questionData: ["a","b","c"],
+            questions: ["a"],
             currentQuestion: "",
             questionNumber: 0
         });
@@ -34,7 +34,7 @@ describe('currentQuestionReducerのテスト', () => {
         };
 
         const currentState = {
-            questionData: [],
+            questions: [],
             currentQuestion: "",
             questionNumber: 0
         };
@@ -42,7 +42,7 @@ describe('currentQuestionReducerのテスト', () => {
         const newState = currentQuestionReducer( currentState, action );
 
         expect( newState ).toStrictEqual({
-            questionData: [],
+            questions: [],
             currentQuestion: "a",
             questionNumber: 0
         });
@@ -57,7 +57,7 @@ describe('currentQuestionReducerのテスト', () => {
         };
 
         const currentState = {
-            questionData: [],
+            questions: [],
             currentQuestion: "",
             questionNumber: 0
         };
@@ -65,7 +65,7 @@ describe('currentQuestionReducerのテスト', () => {
         const newState = currentQuestionReducer( currentState, action );
 
         expect( newState ).toStrictEqual({
-            questionData: [],
+            questions: [],
             currentQuestion: "",
             questionNumber: 5
         });
@@ -77,7 +77,7 @@ describe('currentQuestionReducerのテスト', () => {
         }
 
         const currentState = {
-            questionData: [],
+            questions: [],
             currentQuestion: "",
             questionNumber: 1
         }
@@ -85,9 +85,29 @@ describe('currentQuestionReducerのテスト', () => {
         const newState = currentQuestionReducer( currentState, action );
 
         expect( newState ).toStrictEqual({
-            questionData: [],
+            questions: [],
             currentQuestion: "",
             questionNumber: 0
         });
     });
+
+    it('action.type === RESET_QUESTIONの時', () => {
+        const action = {
+            type: RESET_QUESTION
+        }
+
+        const currentState = {
+            questions: ["a","b,","c"],
+            currentQuestion: "",
+            questionNumber:0
+        }
+
+        const newState = currentQuestionReducer( currentState, action );
+
+        expect( newState ).toStrictEqual({
+            questions: [],
+            currentQuestion: "",
+            questionNumber: 0
+        })
+    })
 })

@@ -1,7 +1,7 @@
-import { FETCH_QUESTION_DATA ,CURRENT_QUESTION, QUESTION_NUMBER, QUESTION_NUMBER_DECREMENT } from './currentQuestion_action';
+import { FETCH_QUESTION_DATA ,CURRENT_QUESTION, QUESTION_NUMBER, QUESTION_NUMBER_DECREMENT, RESET_QUESTION } from './currentQuestion_action';
 
 const init = {
-    questionData: [],
+    questions: [],
     currentQuestion: "",
     questionNumber: 0
 };
@@ -12,7 +12,7 @@ const currentQuestionReducer = ( state = init, action ) => {
         case FETCH_QUESTION_DATA:
             return {
                 ...state,
-                questionData: payload
+                questions: [ ...state.questions, payload  ]
             };
 
         case CURRENT_QUESTION:
@@ -31,6 +31,12 @@ const currentQuestionReducer = ( state = init, action ) => {
             return {
                 ...state,
                 questionNumber: state.questionNumber -1
+            };
+
+        case RESET_QUESTION:
+            return {
+                ...state,
+                questions:[]
             };
 
         default:

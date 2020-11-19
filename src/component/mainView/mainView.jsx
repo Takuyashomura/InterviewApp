@@ -3,7 +3,13 @@ import './mainView.css';
 import { Link } from 'react-router-dom';
 import interviewer from '../../image/interviewer.jpg';
 
-const MainView = () => {
+
+const MainView = ({ fetchQuestionData, SelectType }) => {
+
+    //シャッフルされた質問データから指定された数を取得
+    fetchQuestionData(SelectType.index)
+    //////////////////////////////////////////
+
     return (
         <div className="mainView">
             <div className="container">
