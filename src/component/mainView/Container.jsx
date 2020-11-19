@@ -1,16 +1,17 @@
 import MainView from './mainView';
 import { currentQuestion, fetchQuestionData } from '../../redux/currentQuestion/currentQuestion_action';
+import { addShuffleQuestionData } from '../../service/question';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = state => ({ SelectType: state.SelectType });
+const mapStateToProps = state => ({ SelectType: state.selectType });
 
 const mapDispatchToProps = dispatch => ({
-    fetchQuestions: ( dataArray ) => {
-        dispatch( fetchQuestionData( dataArray ) );
+    fetchQuestionData: num => {
+        dispatch( addShuffleQuestionData( num ) );
     },
 
-    addQuestion: ( data ) => {
+    addCurrentQuestion: ( data ) => {
         dispatch( currentQuestion( data ) )
     }
 });

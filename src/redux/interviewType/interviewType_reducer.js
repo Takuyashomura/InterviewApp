@@ -2,7 +2,7 @@ import { SELECT_INTERVIEW_TYPE, SELECT_INTERVIEW_INDEX } from './interviewType_a
 
 const init = {
     select: '',
-    index: 0
+    index: 1
 };
 
 const interviewTypeReducer = ( state = init, action ) => {

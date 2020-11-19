@@ -8,5 +8,7 @@ describe('question関数のテスト', () => {
         const questionData2 = fetchQuestionData( normalQuestion );
 
         expect( questionData1 ).not.toStrictEqual( questionData2 );
-    })
+    });
+
+    
 });

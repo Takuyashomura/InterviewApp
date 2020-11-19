@@ -1,20 +1,15 @@
 import React from 'react';
 import './mainView.css';
-import { shuffleArray } from '../../service/question';
-import { normalQuestion } from '../../Array/questionArray';
 import { Link } from 'react-router-dom';
 import interviewer from '../../image/interviewer.jpg';
 
 
+const MainView = ({ fetchQuestionData, SelectType }) => {
 
-const MainView = ({ addQuestion }) => {
-    const array = shuffleArray( normalQuestion );
+    //シャッフルされた質問データから指定された数を取得
+    fetchQuestionData(SelectType.index)
+    //////////////////////////////////////////
 
-    for(let i = 0; i < 5; i ++){
-
-        const question = array[i];
-        console.log( question )
-    }
     return (
         <div className="mainView">
             <div className="container">
