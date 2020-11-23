@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './mainView.css';
 import { Link } from 'react-router-dom';
 import interviewer from '../../image/interviewer.jpg';
+import { withRouter } from 'react-router-dom';
 
+const MainView = ({ QuestionData, fetchQuestionData, SelectType, nextQuestion, addCurrentQuestion }) => {
+    
+    useEffect(() => {
+        fetchQuestionData(SelectType.index);
+    },[fetchQuestionData])
 
-const MainView = ({ fetchQuestionData, SelectType }) => {
-
-    //シャッフルされた質問データから指定された数を取得
-    fetchQuestionData(SelectType.index)
-    //////////////////////////////////////////
+    const index = QuestionData.questionNumber;
 
     return (
         <div className="mainView">
             <div className="container">
                 <section className="questionBox">
                     <p className="question">
-                        テストテストテストテストテストテストテストテストテスト
-                        テストテストテストテストテストテストテストテストテスト
-                        テテストテストテストテストテテストテストテストテストテテストテストテストテストテテストテストテストテストテテストテストテストテストテ
+                        {QuestionData.questions[index]}
                     </p>
                 </section>
             </div>
@@ -31,8 +31,8 @@ const MainView = ({ fetchQuestionData, SelectType }) => {
             <div className="container">
                 <section className="evaluationButtonBox">
                     <div className="flex">
-                        <div className="evaluationButton"><p>Bad</p></div>
-                        <div className="evaluationButton"><p>Good</p></div>
+                        <div className="evaluationButton" ><p>Bad</p></div>
+                        <div className="evaluationButton" onClick={ nextQuestion }><p>次の質問</p></div>
                     </div>
                     <Link to="/">トップへ戻る</Link>
                 </section>
@@ -41,4 +41,4 @@ const MainView = ({ fetchQuestionData, SelectType }) => {
     )
 }
 
-export default MainView;
+export default withRouter(MainView);

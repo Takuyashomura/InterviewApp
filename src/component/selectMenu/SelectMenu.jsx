@@ -3,8 +3,7 @@ import Button from '../button/Button';
 import { withRouter } from 'react-router-dom';
 import './selectMenu.css';
 
-const SelectMenu = ({ history, setIndex, resetQuestion }) => {
-    resetQuestion();
+const SelectMenu = ({ history, setIndex }) => {
     
     return (
         <div className="menu">
