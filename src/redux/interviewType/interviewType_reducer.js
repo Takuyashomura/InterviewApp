@@ -1,4 +1,4 @@
-import { SELECT_INTERVIEW_TYPE, SELECT_INTERVIEW_INDEX } from './interviewType_action';
+import { SELECT_INTERVIEW_TYPE, SELECT_INTERVIEW_INDEX, RESET_INDEX } from './interviewType_action';
 
 const init = {
     select: '',
@@ -18,6 +18,12 @@ const interviewTypeReducer = ( state = init, action ) => {
             return{
                 ...state,
                 index: payload
+            }
+
+        case RESET_INDEX:
+            return{
+                ...state,
+                index: 1
             }
 
         default:

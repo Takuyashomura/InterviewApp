@@ -24,7 +24,7 @@ const currentQuestionReducer = ( state = init, action ) => {
         case QUESTION_NUMBER:
             return {
                 ...state,
-                questionNumber: payload
+                questionNumber: payload -1
             };
 
         case QUESTION_NUMBER_DECREMENT:
