@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 import interviewer from '../../image/interviewer.jpg';
 import { withRouter } from 'react-router-dom';
 
-const MainView = ({ QuestionData, fetchQuestionData, SelectType, nextQuestion, addCurrentQuestion }) => {
+const MainView = ({ history, QuestionData, fetchQuestionData, SelectType, nextQuestion }) => {
     
     useEffect(() => {
         fetchQuestionData(SelectType.index);
     },[fetchQuestionData])
 
     const index = QuestionData.questionNumber;
+
+    if( index < 0 ){
+        history.push("Result/");
+    }
 
     return (
         <div className="mainView">

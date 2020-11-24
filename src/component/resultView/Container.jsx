@@ -1,0 +1,18 @@
+import ResultView from './ResultView';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = dispatch => {
+
+}
+
+const mergeProps = (stateProps, dispatchProps) => {
+
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+    mergeProps
+)(ResultView);
