@@ -1,8 +1,15 @@
-import { FETCH_QUESTION_DATA ,CURRENT_QUESTION, QUESTION_NUMBER, QUESTION_NUMBER_DECREMENT, RESET_QUESTION } from './currentQuestion_action';
+import { FETCH_QUESTION_DATA ,
+        CURRENT_QUESTION, 
+        QUESTION_NUMBER, 
+        QUESTION_NUMBER_DECREMENT, 
+        RESET_QUESTION,
+        ADD_NOT_GOOD_QUESTION,
+        RESET_NOT_GOOD_QUESTION } from './currentQuestion_action';
 
 const init = {
     questions: [],
     currentQuestion: "",
+    notGoodQuestion:[],
     questionNumber: 0
 };
 
@@ -38,6 +45,19 @@ const currentQuestionReducer = ( state = init, action ) => {
                 ...state,
                 questions:[]
             };
+
+        case ADD_NOT_GOOD_QUESTION:
+            return {
+                ...state,
+                notGoodQuestion: [ ...state.notGoodQuestion, payload ],
+                questionNumber: state.questionNumber -1
+            }
+
+        case RESET_NOT_GOOD_QUESTION:
+            return {
+                ...state,
+                notGoodQuestion: []
+            }
 
         default:
             return state
