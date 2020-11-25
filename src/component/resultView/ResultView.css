@@ -1,0 +1,19 @@
+table{
+    border: solid 1px;
+    width: 800px;
+    margin: 50px auto;
+}
+
+th{
+    font-size: 30px;
+}
+
+td{
+    border-top: solid 1px;
+    padding: 10px 0;
+    font-size: 20px;
+}
+
+.resultView{
+    text-align: center;
+}

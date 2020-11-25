@@ -1,5 +1,5 @@
 import MainView from './mainView';
-import { currentQuestion, resetQuestion, questionNumber, questionNumberDecrement } from '../../redux/currentQuestion/currentQuestion_action';
+import { currentQuestion, resetQuestion, questionNumber, questionNumberDecrement, addNotGoodQuestion, resetNotGoodQuestion } from '../../redux/currentQuestion/currentQuestion_action';
 import { addShuffleQuestionData } from '../../service/question';
 import { resetIndex } from '../../redux/interviewType/interviewType_action';
 import { connect } from 'react-redux';
@@ -12,14 +12,19 @@ const mapDispatchToProps = dispatch => ({
     },
 
     fetchQuestionData: num => {
-        dispatch(resetQuestion());
+        dispatch( resetQuestion() );
+        dispatch( resetNotGoodQuestion() );
         dispatch( questionNumber(num) );
         dispatch( addShuffleQuestionData( num ) );
-        dispatch(resetIndex());
+        dispatch( resetIndex() );
     },
 
     nextQuestion: () => {
         dispatch( questionNumberDecrement() );
+    },
+
+    addNotGoodQuestion: data => {
+        dispatch( addNotGoodQuestion( data ) );
     }
 });
 

@@ -4,18 +4,20 @@ import { Link } from 'react-router-dom';
 import interviewer from '../../image/interviewer.jpg';
 import { withRouter } from 'react-router-dom';
 
-const MainView = ({ history, QuestionData, fetchQuestionData, SelectType, nextQuestion }) => {
+const MainView = ({ history, QuestionData, fetchQuestionData, SelectType, nextQuestion, addNotGoodQuestion }) => {
     
     useEffect(() => {
         fetchQuestionData(SelectType.index);
     },[fetchQuestionData])
 
+    //questionNumberが-1になったらリザルトページへ移動
     const index = QuestionData.questionNumber;
 
     if( index < 0 ){
         history.push("Result/");
     }
-
+    /////////////////////////////////////////////
+    
     return (
         <div className="mainView">
             <div className="container">
@@ -35,7 +37,9 @@ const MainView = ({ history, QuestionData, fetchQuestionData, SelectType, nextQu
             <div className="container">
                 <section className="evaluationButtonBox">
                     <div className="flex">
-                        <div className="evaluationButton" ><p>Bad</p></div>
+                        <div className="evaluationButton" onClick={ () => {
+                            addNotGoodQuestion(QuestionData.questions[index])
+                        }}><p>苦手な質問だ...</p></div>
                         <div className="evaluationButton" onClick={ nextQuestion }><p>次の質問</p></div>
                     </div>
                     <Link to="/">トップへ戻る</Link>
